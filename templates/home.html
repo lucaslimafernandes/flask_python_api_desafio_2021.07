@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Back-End</title>
+</head>
+<body>
+    <h1>Desafio Back-End</h1>
+    Lucas Lima Fernandes
+
+    <h2>Desafio</h2>
+    <p>
+        Fazer uma API para consulta e edição de produtos.
+        O principal da API é uma rota de pesquisa e a possibilidade de edição em uma base de produtos com imagem, nome, preço, marca e categoria. Outras features são bem vindas e diferenciais. 
+        A tecnologia principal é o Python e não é obrigatório ter front-end, mas outras tecnologias de front-end e back-end serão diferenciais.
+        O código precisa estar hospedado no Github e no arquivo README.md os detalhes do projeto de como usar e tecnologias e o porquê de ter usado essa tecnologia.
+        Sugestões de tecnologias não obrigatórias: Django, Flask, FastApi, Docker, Mysql, Postgres, Github Actions, AWS, Google Cloud, Swagger. 
+    </p>
+
+    <h2>Instalação</h2>
+    <ol>
+        <li>Criar um ambiente virtual (venv)</li>
+        >python3 -m venv vEnv
+
+        <li>Ativar o venv</li>
+        >source vEnv/bin/activate
+
+        <li>Instalar os pacotes</li>
+        >python -m pip install --upgrade pip
+        >pip install -r requirements.txt
+
+        <li>Rodar o Flask</li>
+        >export FLASK_APP=main
+        >flask run
+    </ol>
+
+    <h2>API's [GET]</h2>
+    <p>http://127.0.0.1:5000 como URL local</p>
+    
+    <ul>
+        <p>Consulta que retorna JSON de toda a tabela.</p>
+        <li>http://127.0.0.1:5000/consultaTodos/</li>
+        <br>
+        <p>Consulta conforme algum paramêtro específico.</p>
+        <li>http://127.0.0.1:5000/consulta/?brand=Kuhne - retorna JSON pela busca da marca.</li>
+        <li>http://127.0.0.1:5000/consulta/?categories=Mercearia - retorna JSON pela busca da categoria.</li>
+        <li>http://127.0.0.1:5000/consulta/?name=cafe - retorna JSON pela busca do nome.</li>
+        <li>Importante, a busca é via LIKE, ou seja, Kuh ja retornará os resultados de Kuhne, por exemplo.</li>
+        <br>
+        <p>Busca pelo id do produto</p>
+        <li>http://127.0.0.1:5000/id/70711087</li>
+        <p>Os retornos abaixo serão apenas dos campos selecionados pelo chamado</p>
+            <ul>
+                <li>http://127.0.0.1:5000/id/70711087/id</li>
+                <li>http://127.0.0.1:5000/id/70711087/image</li>
+                <li>http://127.0.0.1:5000/id/70711087/name</li>
+                <li>http://127.0.0.1:5000/id/70711087/categories</li>
+                <li>http://127.0.0.1:5000/id/70711087/price</li>
+                <li>http://127.0.0.1:5000/id/70711087/brand</li>
+            </ul>
+    </ul>
+
+    <h2>API [PATCH]</h2>
+    <p>PATCH para atualização dos valores, possível alterar um valor ou mais de um ao mesmo tempo.</p>
+    <ul>
+        <li>http://127.0.0.1:5000/id/70711087</li>
+        <ul>
+            <p>Headers</p>
+            <li>image</li>
+            <li>name</li>
+            <li>categories</li>
+            <li>price</li>
+            <li>brand</li>
+        </ul>
+    </ul>
+
+    <h3>Considerações</h3>
+    <p>O servidor MySQL é um serviço gratuito, as vezes perde a conexão.</p>
+    <p>Para criar estas API's foi utilizado Python, Flask e MySQL.</p>
+    <p>Abraço,</p>
+    <p>Lucas Lima Fernandes</p>
+
+
+</body>
+</html>
