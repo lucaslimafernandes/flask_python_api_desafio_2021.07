@@ -19,6 +19,7 @@ Lucas Lima Fernandes
 
 4.  Rodar o Flask
 >export FLASK_APP=main
+
 >flask run
 
 ## API's [GET]
